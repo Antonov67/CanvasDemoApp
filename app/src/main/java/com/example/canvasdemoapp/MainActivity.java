@@ -10,9 +10,6 @@ import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-class MyDraw extends View{
+class MyDraw extends View {
 
     public MyDraw(Context context) {
         super(context);
@@ -38,19 +35,22 @@ class MyDraw extends View{
         canvas.drawColor(Color.GRAY);
 
         Paint paint = new Paint();
-        paint.setColor(Color.RED);
+        paint.setColor(Color.YELLOW);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, 200, paint);
 
         paint.setColor(Color.BLACK);
-        paint.setStyle(Paint.Style.STROKE);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
-        canvas.drawRect(100,100,800,500, paint);
+        canvas.drawRect(100, 100, 800, 500, paint);
 
         paint.setTextSize(76f);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawText("Android", 100, 1500, paint);
+
+        paint.setColor(Color.RED);
+        canvas.drawOval(500, 500, 1000, 700, paint);
 
     }
 }
