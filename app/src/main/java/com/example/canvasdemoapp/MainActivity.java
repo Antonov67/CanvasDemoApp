@@ -1,6 +1,8 @@
 package com.example.canvasdemoapp;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -51,6 +53,11 @@ class MyDraw extends View {
 
         paint.setColor(Color.RED);
         canvas.drawOval(500, 500, 1000, 700, paint);
+
+        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.android);
+        int xx = canvas.getWidth();
+        int yy = canvas.getHeight();
+        canvas.drawBitmap(image, xx - image.getWidth(), yy - image.getHeight(), paint);
 
     }
 }
